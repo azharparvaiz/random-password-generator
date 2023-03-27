@@ -1,0 +1,79 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.navbar h3 span {
+	color: #DC3545;
+}
+
+.yp_header .yp_header_left h4 {
+	color: #DC3545;
+	font-family: 'Tilt Neon', cursive;
+}
+
+.yp_header .yp_header_left h1 {
+	font-family: 'Kanit', sans-serif;
+	font-size: 2.125rem;
+}
+
+.yp_header .yp_header_left p {
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.yp_header .yp_header_left p:hover {
+	text-decoration: underline;
+}
+
+.yp_main {
+	background-color: #CAEDF7;
+}
+
+.yp_main h2 {
+	font-family: 'Kanit', sans-serif;
+	font-size: 2rem;
+	line-height: 40px;
+	margin-bottom: 24px;
+	font-weight: 700;
+	width: 100%;
+}
+
+.yp_main p {
+	max-width: 800px;
+	margin-bottom: 0.5rem;
+}
+
+.yp_main .yp_main_card {
+	background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    margin: 0 auto 15px;
+    max-width: 800px;
+    padding: 25px;
+}
+
+.yp_main .yp_main_card .yp_main_card_top_heading {
+	font-family: 'Kanit', sans-serif;
+	font-size: 1.75rem;
+	font-family: 700;
+	border-bottom: 2px solid #F0F2F5;
+}
+
+@media only screen and (min-width:991px) {
+	
+	.yp_header .yp_header_left h1 {
+		font-size: 3rem;
+	}
+
+	.yp_main h2 {
+		width: 50%;
+		font-size: 3rem;
+		line-height: 56px;
+	}
+}
