@@ -24,7 +24,8 @@
             <div class="col-md-6 col-sm-12 yp_header_left p-3">
                 <h4 class="text-center text-md-start">PASSWORD GENERATOR ROBO</h4>
                 <h1 class="text-center text-md-start">100% Unique & Secure Password For All Your Needs</h1>
-                <p href="#passwordGeneratorDiv" class="w-100 text-center text-md-start h4 link-primary">Try It Now</p>
+                <a href="#passwordGeneratorDiv" class="d-block w-100 text-center text-md-start h4 link-primary">Try It
+                    Now</a>
             </div>
             <div class="col-md-6 col-sm-12">
                 <img src="./assets/images/pwd-bg.jpg" class="img-fluid" />
@@ -33,53 +34,77 @@
     </div>
     <div class="container-fluid yp_main mt-3">
         <div class="container py-5">
-            <h2 class="mx-auto text-start text-md-center">Generate a random, secure password instantly with YourPass online utility</h2>
-            <p class="mx-auto text-start text-md-center">Investing in password security is like investing in insurance; it may seem unnecessary until you need it, but by then it could be too late.
-                With YourPass, creating a strong and secure password is a simple yet effective way to protect your online identity and prevent unauthorized access.
+            <h2 class="mx-auto text-start text-md-center">Generate a random, secure password instantly with YourPass
+                online utility</h2>
+            <p class="mx-auto text-start text-md-center">Investing in password security is like investing in insurance;
+                it may seem unnecessary until you need it, but by then it could be too late.
+                With YourPass, creating a strong and secure password is a simple yet effective way to protect your
+                online identity and prevent unauthorized access.
             </p>
             <div class="yp_main_card" id="passwordGeneratorDiv">
                 <p class="yp_main_card_top_heading">Set your preferences</p>
                 <p class="yp_main_card_top_paragraph"></p>
-                <section class="row g-3 align-items-center">
-                    <div class="col-auto">
-                        <label for="passwordLength" class="col-form-label">Choose a Password Length</label>
-                    </div>
-                    <div class="col-auto">
-                        <input type="number" id="passwordLength" min="8" max="32" class="form-control"
-                            aria-labelledby="userPassword">
-                    </div>
-                    <div class="col-auto">
-                        <span id="userPassword" class="form-text">
-                            Min - 8, Max - 32
-                        </span>
-                    </div>
-                </section>
                 <section class="row">
-                    <div class="form-check form-check-inline">
-                        <h5>Include:</h5>
+                    <div class="col-md-5 col-sm-12">
+                        <div class="col-auto">
+                            <label for="passwordLength" class="col-form-label">Enter Password Length</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="number" id="passwordLength" min="8" max="32" class="form-control"
+                                aria-labelledby="userPassword">
+                        </div>
+                        <div class="col-auto">
+                            <span id="userPassword" class="form-text">
+                                Min - 8, Max - 32
+                            </span>
+                        </div>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="uppercase" value="Uppercsase">
-                        <label class="form-check-label" for="uppercase">Uppercase</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="numbers" value="Numbers">
-                        <label class="form-check-label" for="numbers">Numbers</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="symbols" value="Special Characters">
-                        <label class="form-check-label" for="symbols">Special Characters</label>
+                    <div class="col-md-7 col-sm-12">
+                        <label class="col-form-label">Include:</label><br />
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="uppercase" value="Uppercase">
+                            <label class="form-check-label" for="uppercase">Uppercase</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="numbers" value="Numbers">
+                            <label class="form-check-label" for="numbers">Numbers</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="symbols" value="Special Characters">
+                            <label class="form-check-label" for="symbols">Special Characters</label>
+                        </div>
                     </div>
                 </section>
-                <button type="button" class="btn btn-outline-danger" id="generate-password">Generate Password</button>
+                <input type="text" class="form-control mt-2" id="password-display" />
+                <div class="yp_btns_div my-3">
+                    <button type="button" class="btn btn-outline-danger" id="generate-password">Generate
+                        Password</button>
+                    <button type="button" class="btn btn-outline-danger" id="copy-password">Copy Password</button>
+                </div>
+
             </div>
-            <div id="password-display"></div>
+            <div class="modal fade" id="copiedConfirmationModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content bg-success text-white">
+                        <div class="modal-body text-center">
+                            Password Copied Successfully!
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

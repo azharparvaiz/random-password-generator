@@ -1,6 +1,9 @@
 // Define variables
 const generateButton = document.getElementById('generate-password');
 const passwordDisplay = document.getElementById('password-display');
+const copyButton = document.getElementById('copy-password');
+const myModal = new bootstrap.Modal(document.getElementById('copiedConfirmationModal'), {});
+copyButton.disabled = true;
 
 // Define password generator function
 function generatePassword(length) {
@@ -31,18 +34,30 @@ function generatePassword(length) {
 	return password;
 }
 
-// Add event listener to button
+// Event listener for generate password button
 generateButton.addEventListener('click', () => {
 	const passwordLength = document.getElementById('passwordLength').value;
 	if ( passwordLength >= 8 && passwordLength <= 32 ) {
         const password = generatePassword(passwordLength);
-	    passwordDisplay.textContent = password;
+	    passwordDisplay.value = password;
         passwordDisplay.style.color = "#000";
+		copyButton.disabled = false;
     } else if (passwordLength > 32) {
-        passwordDisplay.textContent = "Password Length Exceeded! Choose between 8 - 32";
+        passwordDisplay.value = "Password Length Exceeded! Choose between 8 - 32";
         passwordDisplay.style.color = "red";
     } else {
-        passwordDisplay.textContent = "Weak Password Length!";
+        passwordDisplay.value = "Weak Password Length!";
         passwordDisplay.style.color = "red";
     }
+});
+
+// Event listener for copy password button
+copyButton.addEventListener('click', () => {
+	navigator.clipboard.writeText(passwordDisplay.value);
+	myModal.show();
+
+	// Hide Modal after 2 seconds
+	setTimeout(() => { 
+		myModal.hide();
+	}, 2000);
 });
